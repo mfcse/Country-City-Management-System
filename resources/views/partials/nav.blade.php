@@ -22,7 +22,7 @@
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">City</a>
             <div class="dropdown-menu" aria-labelledby="dropdown07">
               <a class="dropdown-item" href="{{route('city.add')}}">Add a City</a>
-              <a class="dropdown-item" href="#">View All Cities</a>
+              <a class="dropdown-item" href="{{route('city.show')}}">View All Cities</a>
             </div>
           </li>
         </ul>

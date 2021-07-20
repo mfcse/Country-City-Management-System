@@ -59,6 +59,12 @@ class CityController extends Controller
     }
     public function ShowAllCity()
     {
-        return view('city.show');
+        $data = [];
+        // $data['cities'] = City::select('id', 'name', 'about', 'number_of_dwellers', 'location', 'weather')->paginate(10);
+        $data['cities'] = City::with('country')->paginate(10);
+
+        //dd($data['cities']);
+
+        return view('city.show', $data);
     }
 }
