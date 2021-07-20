@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Route::get('/add-country', [CountryController::class, 'addCountry'])->name('country.add');
 Route::post('/add-country', [CountryController::class, 'submitCountry']);
+Route::get('/countries', [CountryController::class, 'ShowAllCountries'])->name('country.show');
 
 Route::get('/add-city', [CityController::class, 'addCity'])->name('city.add');
 Route::post('/add-city', [CityController::class, 'submitCity']);
+
+Route::get('/cities', [CityController::class, 'ShowAllCity'])->name('city.show');

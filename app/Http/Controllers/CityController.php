@@ -57,4 +57,8 @@ class CityController extends Controller
 
         return redirect()->back();
     }
+    public function ShowAllCity()
+    {
+        return view('city.show');
+    }
 }

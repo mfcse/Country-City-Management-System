@@ -40,4 +40,16 @@ class CountryController extends Controller
 
         return redirect()->back();
     }
+    public function ShowAllCountries()
+    {
+        $data = [];
+        //$number_of_dwellers = 0;
+        $data['countries'] = Country::with('cities')->get();
+        // dd($data['countries']);
+        // foreach ($data['countries']->cities() as $city) {
+        //     $number_of_dwellers += $city->number_of_dwellers;
+        // }
+        //dd($number_of_dwellers);
+        return view('country.show', $data);
+    }
 }
