@@ -25,24 +25,22 @@
                </tr>
            </thead>
            <tbody>
-               @php
-                   $i=1;
-                   $number_of_dwellers=0.0;
-               @endphp
                @foreach ($countries as $country)
                <tr>
-                <td>{{$i++}}</td>
+                <td>{{$loop->index}}</td>
                 <td>{{$country->name}}</td>
                 <td>{!! $country->about !!}</td>
                 <td>{{count($country->cities)}}</td>
                 <td>
-                    @php
+                    {{-- @php
                         foreach($country->cities as $city){
                             $number_of_dwellers=$number_of_dwellers+$city->number_of_dwellers;
                         }
                         echo $number_of_dwellers.'<br>';
                         $number_of_dwellers=0;
-                    @endphp
+                    @endphp --}}
+                    {{$number_of_dwellers[$loop->index]}}
+                    
                 </td>
                </tr>
                @endforeach
