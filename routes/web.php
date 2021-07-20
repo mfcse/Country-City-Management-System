@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add-country', [CountryController::class, 'addCountry']);
+Route::get('/add-country', [CountryController::class, 'addCountry'])->name('country.add');
 Route::post('/add-country', [CountryController::class, 'submitCountry']);
