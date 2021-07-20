@@ -45,7 +45,7 @@ class CountryController extends Controller
         $data = [];
         $temp = 0;
         $data['number_of_dwellers'] = [];
-        $data['countries'] = Country::with('cities')->get();
+        $data['countries'] = Country::with('cities')->paginate(10);
 
         foreach ($data['countries'] as $key => $country) {
             //dd($country);
@@ -60,4 +60,10 @@ class CountryController extends Controller
 
         return view('country.show', $data);
     }
+    // public function searchCountries($key)
+    // {
+    //     $countries = Country::where('name', 'like', '%' . $key . '%')->get();
+    //     dd($countries);
+    //     return view()
+    // }
 }

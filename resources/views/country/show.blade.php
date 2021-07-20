@@ -27,7 +27,7 @@
            <tbody>
                @foreach ($countries as $country)
                <tr>
-                <td>{{$loop->index}}</td>
+                <td>{{$loop->index+1}}</td>
                 <td>{{$country->name}}</td>
                 <td>{!! $country->about !!}</td>
                 <td>{{count($country->cities)}}</td>
@@ -48,6 +48,7 @@
            </tbody>
        </table>
     </div>
+    {{$countries->links()}}
 </div>
 
     
