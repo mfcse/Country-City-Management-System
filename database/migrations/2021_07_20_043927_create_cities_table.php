@@ -20,7 +20,7 @@ class CreateCitiesTable extends Migration
             $table->unsignedBigInteger('numer_of_dwellers');
             $table->string('location', 128);
             $table->string('weather', 128);
-            $table->unsignedInteger('country_id');
+            $table->unsignedBigInteger('country_id');
             $table->timestamps();
             $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
         });

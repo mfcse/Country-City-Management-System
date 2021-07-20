@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/add-country', [CountryController::class, 'addCountry']);
+Route::post('/add-country', [CountryController::class, 'submitCountry']);

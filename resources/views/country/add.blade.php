@@ -2,8 +2,20 @@
 @section('content')
 <div class="row">
     <div class="col-md-6 offset-md-3 mt-5">
-        <h1 class="text-center">Country Entry</h1>
-        <form action="">
+        <h1 class="text-center mb-5">Country Entry</h1>
+        
+
+            @if (session()->has('message'))
+            <div class="alert alert-{{session('type')}} alert-dismissible fade show" role="alert">
+                {{session()->get('message')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            @endif
+            
+        <form action="" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter a Country Name" class="form-control">
