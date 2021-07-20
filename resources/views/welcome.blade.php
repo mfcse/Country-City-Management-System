@@ -1,7 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-    <a href="{{ route('country.add') }}" class="text-sm text-gray-700 underline">Add Country</a>
+<div class="col-md-6 offset-md-3 mt-5 display-4">
+    <div>
+    <a href="{{ route('country.add')}}">Add Country</a>
+    </div>
+    <div>
+    <a href="{{ route('city.add') }}">Add City</a>
+    </div>
+</div>
+    
  @endsection
         
   

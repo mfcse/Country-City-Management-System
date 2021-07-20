@@ -17,7 +17,7 @@ class CreateCitiesTable extends Migration
             $table->id();
             $table->string('name', 64);
             $table->longText('about');
-            $table->unsignedBigInteger('numer_of_dwellers');
+            $table->decimal('number_of_dwellers', 9, 2);
             $table->string('location', 128);
             $table->string('weather', 128);
             $table->unsignedBigInteger('country_id');

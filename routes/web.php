@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/add-country', [CountryController::class, 'addCountry'])->name('country.add');
 Route::post('/add-country', [CountryController::class, 'submitCountry']);
+
+Route::get('/add-city', [CityController::class, 'addCity'])->name('city.add');
+Route::post('/add-city', [CityController::class, 'submitCity']);
