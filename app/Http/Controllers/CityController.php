@@ -61,7 +61,7 @@ class CityController extends Controller
     {
         $data = [];
         // $data['cities'] = City::select('id', 'name', 'about', 'number_of_dwellers', 'location', 'weather')->paginate(10);
-        $data['cities'] = City::with('country')->paginate(10);
+        $data['cities'] = City::with('country')->get();
 
         //dd($data['cities']);
 
