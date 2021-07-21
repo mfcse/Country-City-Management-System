@@ -60,10 +60,47 @@ class CountryController extends Controller
 
         return view('country.show', $data);
     }
-    // public function searchCountries($key)
-    // {
-    //     $countries = Country::where('name', 'like', '%' . $key . '%')->get();
-    //     dd($countries);
-    //     return view()
-    // }
+    public function searchCountries(Request $request)
+    {
+        //$countries = Country::where('name', 'like', '%' . $key . '%')->get();
+        // dd($countries);
+        //return view();
+
+        if ($request->ajax()) {
+            $data = [];
+            $temp = 0;
+            $i = 0;
+            $number_of_dwellers = [];
+            $data['countries'] = Country::with('cities')->paginate(10);
+
+            foreach ($data['countries'] as $key => $country) {
+                //dd($country);
+                foreach ($country->cities as $city) {
+                    $temp += $city->number_of_dwellers;
+                }
+                $number_of_dwellers[] = $temp;
+                $temp = 0;
+            }
+
+            $output = "";
+
+
+            $countries = Country::where('name', 'like', '%' . $request->search . '%')->get();
+
+            if ($countries) {
+
+                foreach ($countries as $key => $country) {
+                    $output .= '<tr>' .
+                        '<td>' . ++$i . '</td>' .
+                        '<td>' . $country->name . '</td>' .
+                        '<td>' . $country->about . '</td>' .
+                        '<td>' . 'count' . '</td>' .
+                        '<td>' . $number_of_dwellers[$i++] . '</td>' .
+                        '</tr>';
+                }
+                //dd($output);
+                return Response($output);
+            }
+        }
+    }
 }

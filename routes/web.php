@@ -23,9 +23,12 @@ Route::get('/add-country', [CountryController::class, 'addCountry'])->name('coun
 Route::post('/add-country', [CountryController::class, 'submitCountry']);
 Route::get('/countries', [CountryController::class, 'ShowAllCountries'])->name('country.show');
 //search
-Route::get('/countries/{key}', [CountryController::class, 'searchCountries'])->name('country.search');
+Route::get('/search', [CountryController::class, 'searchCountries'])->name('country.search');
 
 Route::get('/add-city', [CityController::class, 'addCity'])->name('city.add');
 Route::post('/add-city', [CityController::class, 'submitCity']);
 
 Route::get('/cities', [CityController::class, 'ShowAllCity'])->name('city.show');
+
+
+// Route::get('/search', [CityController::class, 'ShowAllCity'])->name('city.show');
