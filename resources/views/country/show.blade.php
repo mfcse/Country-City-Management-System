@@ -18,7 +18,7 @@
                 <button type="submit" name="searchCountry" id="searchCountry" class="btn btn-success">Search</button>
             </div>
             
-       <table class="table table-bordered table-hover">
+       <table class="table table-bordered table-hover" id="countryTable">
            <thead>
                <tr>
                    <th>Serial</th>
@@ -52,8 +52,14 @@
            </tbody>
        </table>
     </div>
-    {{$countries->links()}}
+    {{-- {{$countries->links()}} --}}
 </div>
-
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#countryTable').DataTable();
+} );
+</script>
 @endsection
 
