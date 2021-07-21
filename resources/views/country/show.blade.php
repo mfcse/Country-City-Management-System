@@ -13,10 +13,10 @@
                   </button>
             </div>
             @endif
-            <div class="search-bar py-3">
+            {{-- <div class="search-bar py-3">
                 <input type="text" name="countrySearch" id="countrySearch">
                 <button type="submit" name="searchCountry" id="searchCountry" class="btn btn-success">Search</button>
-            </div>
+            </div> --}}
             
        <table class="table table-bordered table-hover" id="countryTable">
            <thead>

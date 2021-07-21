@@ -23,7 +23,7 @@
             </div>
             @endif
             
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" id="cityTable">
                 <thead>
                     <tr>
                         <th>Serial</th>
@@ -54,5 +54,11 @@
          {{$cities->links()}}
      </div>
      
-    
+     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+     <script>
+     $(document).ready(function() {
+         $('#cityTable').DataTable();
+     } );
+     </script>
 @endsection
